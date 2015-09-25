@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xc.xnode.friend.dao.MessagesMapper" >
+  <resultMap id="BaseResultMap" type="com.xc.xnode.friend.domain.Messages" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="sender" property="sender" jdbcType="INTEGER" />
+    <result column="receiver" property="receiver" jdbcType="INTEGER" />
+    <result column="message" property="message" jdbcType="VARCHAR" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="modify_date" property="modifyDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, status, type, sender, receiver, message, create_date, modify_date
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from messages
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from messages
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xc.xnode.friend.domain.Messages" >
+    insert into messages (id, status, type, 
+      sender, receiver, message, 
+      create_date, modify_date)
+    values (#{id,jdbcType=INTEGER}, #{status,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, 
+      #{sender,jdbcType=INTEGER}, #{receiver,jdbcType=INTEGER}, #{message,jdbcType=VARCHAR}, 
+      #{createDate,jdbcType=TIMESTAMP}, #{modifyDate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xc.xnode.friend.domain.Messages" >
+    insert into messages
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="sender != null" >
+        sender,
+      </if>
+      <if test="receiver != null" >
+        receiver,
+      </if>
+      <if test="message != null" >
+        message,
+      </if>
+      <if test="createDate != null" >
+        create_date,
+      </if>
+      <if test="modifyDate != null" >
+        modify_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="sender != null" >
+        #{sender,jdbcType=INTEGER},
+      </if>
+      <if test="receiver != null" >
+        #{receiver,jdbcType=INTEGER},
+      </if>
+      <if test="message != null" >
+        #{message,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyDate != null" >
+        #{modifyDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xc.xnode.friend.domain.Messages" >
+    update messages
+    <set >
+      <if test="status != null" >
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="sender != null" >
+        sender = #{sender,jdbcType=INTEGER},
+      </if>
+      <if test="receiver != null" >
+        receiver = #{receiver,jdbcType=INTEGER},
+      </if>
+      <if test="message != null" >
+        message = #{message,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyDate != null" >
+        modify_date = #{modifyDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xc.xnode.friend.domain.Messages" >
+    update messages
+    set status = #{status,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      sender = #{sender,jdbcType=INTEGER},
+      receiver = #{receiver,jdbcType=INTEGER},
+      message = #{message,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      modify_date = #{modifyDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="FriendMessageResultMap" type="com.xc.xnode.friend.domain.FriendMessage" >
+  <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+	<result column="sender" property="sender" jdbcType="INTEGER" />
+	<result column="senderName" property="senderName" jdbcType="VARCHAR" />
+	<result column="receiver" property="receiver" jdbcType="INTEGER" />
+	<result column="receiverName" property="receiverName" jdbcType="VARCHAR" />
+	<result column="message" property="message" jdbcType="VARCHAR" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="modify_date" property="modifyDate" jdbcType="TIMESTAMP" />
+ </resultMap>
+
+ <select id="selectMessagesByReceiver" resultMap="FriendMessageResultMap" parameterType="java.lang.String">
+	SELECT m.*,re.username as receiverName,se.username as senderName from messages m
+		LEFT JOIN user re on m.receiver = re.id
+			LEFT JOIN user se on m.sender = se.id
+				where m.status = "S" and re.username = #{loginUser,jdbcType=VARCHAR} 
+				<if test="username != null">
+					and se.username = #{username,jdbcType=VARCHAR}
+				</if>
+ </select>
+ 
+ <select id="selectMessagesByParams" resultMap="BaseResultMap" parameterType="java.util.Map">
+	SELECT m.* from messages m 
+		LEFT JOIN user se on m.sender = se.id
+			left JOIN user re on m.receiver = re.id
+				where m.status = "S"
+		<if test="loginUser != null">
+			and m.sender = #{loginUser,jdbcType=INTEGER}
+		</if>
+		<if test="userId != null">
+			and m.receiver = #{userId,jdbcType=INTEGER}
+		</if>
+		<if test="senderName != null">
+			and se.username = #{senderName,jdbcType=VARCHAR}
+		</if>
+		<if test="receiverName != null">
+			and re.username = #{receiverName,jdbcType=VARCHAR}
+		</if>
+		<if test="startDate != null">
+			and m.modify_date &gt;=  #{startDate,jdbcType=TIMESTAMP}
+		</if>
+		<if test="endDate != null">
+			and m.modify_date &lt;=  #{endDate,jdbcType=TIMESTAMP}
+		</if>
+ </select>
+</mapper>

@@ -1,0 +1,85 @@
+@charset "utf-8";
+
+/*
+ * Copyright 2005-2013 hengtiansoft.com. All rights reserved.
+ * Support: http://www.hengtiansoft.com
+ * License: http://www.hengtiansoft.com/license
+ * 
+ * Style - Common
+ * Version 1.0_beta
+ */
+ 
+/* ---------- Reset ---------- */
+body{
+	min-width: 1000px;
+}
+
+/* ---------- breadcrumb ---------- */
+ol.breadcrumb{
+	margin-bottom: 0;
+	padding: 5px 15px;
+	height: 26px;
+	border-bottom: 1px solid #d7e8f1;
+	border-radius: 0;
+	background-color: #f5faff;
+}
+
+
+/* ---------- Form ---------- */
+select.form-control{
+	width: 180px;
+}
+
+/* --------- Toolbar ----------*/
+div.btn-toolbar{
+	padding: 4px;
+}
+
+div.btn-toolbar .input-group{
+	width: 180px;
+	float: right;
+}
+
+div.btn-toolbar .search .btn-sm{
+	line-height: 1.4;
+}
+
+div.btn-toolbar .input-group button[type="submit"]{
+	border-left: none;
+}
+
+
+
+/* --------- Table ---------- */
+table.list input[type="checkbox"]{
+	margin: 2px 0 0;
+}
+
+table.list th a.btn{
+	padding-left: 8px;
+	background-color: transparent;
+}
+
+table.list tbody tr th{
+	padding: 0;
+	background-color: #F2F4F6;
+	border-right: 1px solid #c6c9ca;
+}
+
+table.list .sort span{
+	float: right;
+	visibility: hidden;
+}
+
+table.list th:first-child,
+table.list th:last-child{
+	padding-top: 6px;
+	padding-left: 8px;
+}
+
+table.list th a{
+	display: block;
+	text-align: left;
+	border: none;
+	border-radius: 0;
+}

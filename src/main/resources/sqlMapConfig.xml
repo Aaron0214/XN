@@ -1,0 +1,52 @@
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+ 
+<configuration>
+ 
+  <settings>
+    <setting name="useGeneratedKeys" value="false"/>
+  </settings>
+ 
+  <!-- Use type aliases to avoid typing the full classname every time. -->
+  <typeAliases>
+    <typeAlias alias="User" type="com.xc.xnode.user.domain.User"/>
+    <typeAlias alias="Node" type="com.xc.xnode.node.domain.Node"/>
+    <typeAlias alias="CodeDict" type="com.xc.xnode.codedict.domain.CodeDict"/>
+    <typeAlias alias="Address" type="com.xc.xnode.user.domain.Address"/>
+    <typeAlias alias="WishPool" type="com.xc.xnode.wishpool.domain.WishPool"/>
+    <typeAlias alias="WishPoolUser" type="com.xc.xnode.wishpool.domain.WishPoolUser"/>
+    <typeAlias alias="SearchParams" type="com.xc.xnode.wishpool.domain.SearchParams"/>
+    <typeAlias alias="WisherDesire" type="com.xc.xnode.wishpool.domain.WisherDesire"/>
+    <typeAlias alias="Friend" type="com.xc.xnode.friend.domain.Friend"/>
+    <typeAlias alias="Messages" type="com.xc.xnode.friend.domain.Messages"/>
+    <typeAlias alias="LoginInfo" type="com.xc.xnode.login.domain.LoginInfo"/>
+    <typeAlias alias="Sn" type="com.xc.xnode.common.domain.Sn"/>
+  </typeAliases>
+ 
+  <!-- setup environment with JDBC data source -->
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+        <property name="driver" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/xnode"/>
+      </dataSource>
+    </environment>
+  </environments>
+ 
+  <!-- mapping files -->
+  <mappers>
+    <mapper resource="com/xc/xnode/user/mappings/UserMapper.xml"/>
+    <mapper resource="com/xc/xnode/node/mappings/NodeMapper.xml"/>
+    <mapper resource="com/xc/xnode/codedict/mappings/CodeDictMapper.xml"/>
+    <mapper resource="com/xc/xnode/user/mappings/AddressMapper.xml"/>
+    <mapper resource="com/xc/xnode/wishpool/mappings/WishPoolMapper.xml"/>
+    <mapper resource="com/xc/xnode/wishpool/mappings/WisherDesireMapper.xml"/>
+    <mapper resource="com/xc/xnode/friend/mappings/FriendMapper.xml"/>
+    <mapper resource="com/xc/xnode/friend/mappings/MessagesMapper.xml"/>
+    <mapper resource="com/xc/xnode/login/mappings/LoginInfoMapper.xml"/>
+    <mapper resource="com/xc/xnode/common/mappings/SnMapper.xml"/>
+  </mappers>
+ 
+</configuration>

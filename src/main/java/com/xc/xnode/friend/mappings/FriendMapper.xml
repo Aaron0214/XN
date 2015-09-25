@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xc.xnode.friend.dao.FriendMapper" >
+  <resultMap id="BaseResultMap" type="com.xc.xnode.friend.domain.Friend" >
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="frienf_id" property="frienfId" jdbcType="INTEGER" />
+  </resultMap>
+  <insert id="insert" parameterType="com.xc.xnode.friend.domain.Friend" >
+    insert into friend (user_id, frienf_id)
+    values (#{userId,jdbcType=INTEGER}, #{frienfId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xc.xnode.friend.domain.Friend" >
+    insert into friend
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="frienfId != null" >
+        frienf_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="frienfId != null" >
+        #{frienfId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  
+  <resultMap id="FriendResultMap" type="com.xc.xnode.friend.domain.FriendEntity" >
+    <result column="code" property="code" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="INTEGER" />
+    <result column="node_num" property="nodeNum" jdbcType="INTEGER" />
+    <result column="wishNum" property="wishNum" jdbcType="INTEGER" />
+    <result column="friend_num" property="friendNum" jdbcType="INTEGER" />
+  </resultMap>
+  <select id="selectFriendList" resultMap="FriendResultMap" parameterType="java.util.Map">
+  	select u.code,u.name,u.username,u.sex,n.node_num,w.wishNum,uf.friend_num from friend f 
+		LEFT JOIN user u on f.frienf_id = u.id
+			LEFT JOIN (select count(*) as friend_num,user_id from friend group by user_id) uf on u.id = uf.user_id
+				LEFT JOIN (select count(*) as node_num,user_id from node group by user_id) n on u.id = n.user_id
+					LEFT JOIN (select count(*) as wishNum,user_id from wish_pool group by user_id) w on u.id = w.user_id
+		LEFT JOIN user now on f.user_id = now.id where 1=1
+		<if test="username != null">
+			and now.username = #{username,jdbcType=VARCHAR}
+		</if>
+  </select>
+  
+  <select id="selectUnFriendList" resultType="java.lang.String" parameterType="java.util.Map">
+  	select username from user 
+		where id not in (select ifnull(f.frienf_id,"") from user u 
+			LEFT JOIN friend f on u.id = f.user_id
+				where u.username = #{loginname,jdbcType=VARCHAR})
+	      and id not in(select ifnull(f.user_id,"") from user u 
+			LEFT JOIN friend f on u.id = f.frienf_id
+				where u.username = #{loginname,jdbcType=VARCHAR})
+		    and username != #{loginname,jdbcType=VARCHAR}
+		<if test="username != null">
+			and username like concat('%',#{username,jdbcType=VARCHAR},'%')
+		</if>
+  </select>
+  
+  <delete id="deleteFriengByParams" parameterType="java.util.Map">
+  	delete from friend where 1=1
+  		<if test="loginUser != null">
+  		 	and user_id = #{loginUser,jdbcType=INTEGER}
+  		</if>
+  		<if test="userId != null">
+  			and frienf_id = #{userId,jdbcType=INTEGER}
+  		</if>
+  </delete>
+</mapper>

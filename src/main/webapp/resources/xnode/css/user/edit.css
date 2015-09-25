@@ -1,0 +1,28 @@
+.button {
+	height:30px;
+	
+}
+
+input[type="radio"] {
+  margin: -1px 5px 0px 0px;
+}
+
+.input {
+	font-size:14px;
+}
+.text {
+	width: 128px;
+}
+.input th{
+	line-height: 30px;
+}
+select.text{
+	width:90px;
+}
+#town,#city {
+	margin-left:10px;
+}
+
+#bir_town,#bir_city {
+	margin-left:10px;
+}

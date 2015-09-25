@@ -1,0 +1,167 @@
+.header-box {
+	padding: 25px;
+	width: 980px;
+	margin-left: auto;
+	margin-right: auto;
+	height: 10px;
+}
+
+.title {
+	font-size: 20px;
+	position: absolute;
+	left: 15%;
+}
+
+.login {
+	position: absolute;
+	right: 15%;
+}
+
+a:hover {
+	cursor: text;
+	color: #666666;
+}
+
+span:hover {
+	cursor: pointer;
+}
+
+.header-box span {
+	margin-left: 5px;
+	border: 1px solid #ccc;
+	padding: 7px 17px;
+	border-radius: 5px;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+#nav .nav-2 {
+	height: 20px;
+	background: url(../../images/login/reg_hr_e84a6d3b.png) no-repeat center
+		top;
+}
+
+.input {
+	word-break: break-all;
+	width: 1110px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.button {
+	padding: 0 35px;
+	height: 35px;
+	font-size: 18px;
+}
+
+.center-box {
+	margin-top: 20px;
+}
+
+.center-box a {
+	color: #1b66c7;
+	margin-left: -5px;
+}
+
+.center-box a:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+th {
+	font-size: 16px;
+}
+
+.input td {
+	line-height: 35px;
+}
+
+.text {
+	width: 232px;
+	height: 25px;
+}
+
+.register {
+	margin-top: -5px;
+	background-color: rgb(0, 168, 255);
+	width: 240px;
+	height: 35px;
+	border: none;
+	font-size: 16px;
+	border-radius: 4px;
+	color: white;
+	padding: 6px;
+	cursor: pointer;
+}
+
+.p_info {
+	position: absolute;
+	margin-top: -5px;
+	margin-left: 20px;
+	border: 1px solid #ccc;
+	height: 59px;
+	padding: 12px 0px 0px 12px;
+	width: 100px;
+	line-height: 19px;
+	background: white;
+}
+
+.info-box{
+	position: absolute;
+	margin-top: -34px;
+  	margin-left: 237px;
+}
+
+.info-img{
+	border-bottom: 1px solid #ccc;
+  	border-left: 1px solid #ccc;
+  	position: absolute;
+  	height: 15px;
+  	width: 15px;
+  	transform: rotate(45deg);
+  	background: white;
+  	margin-top: 10px;
+  	margin-left: 12px;
+}
+
+.checkuser-box{
+	position: absolute;
+	margin-top: -34px;
+  	margin-left: 245px;
+  	background: white;
+}
+
+.r_info{
+	color: crimson;
+  	font-size: 14px;
+  	margin-left: 12px;
+}
+
+.email-box{
+	position: absolute;
+	margin-top: -34px;
+  	margin-left: 237px;
+}
+
+.email-box .p_info{
+	width: 145px;
+}
+
+.information{
+	 color: blueviolet;
+  	 font-size: 12px;
+ 	 margin-left: 10px;
+}
+
+.warn{
+	border-color: rgb(242, 34, 137);
+}
+
+.dialogContent .input{
+	  width: 320px
+}
+
+.dialog-overlay{
+	background: #000;
+  	opacity: 0.6;
+}

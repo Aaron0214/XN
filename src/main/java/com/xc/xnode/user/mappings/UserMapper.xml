@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xc.xnode.user.dao.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.xc.xnode.user.domain.User" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="code" property="code" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="INTEGER" />
+    <result column="birth" property="birth" jdbcType="DATE" />
+    <result column="address" property="address" jdbcType="INTEGER" />
+    <result column="birth_place" property="birthPlace" jdbcType="INTEGER" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="modify_date" property="modifyDate" jdbcType="TIMESTAMP" />
+    <result column="comments" property="comments" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, status, name, code, sex, birth, address, birth_place, username, password, email, 
+    create_date, modify_date, comments
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xc.xnode.user.domain.User" >
+    insert into user (id, status, name, 
+      code, sex, birth, address, 
+      birth_place, username, password, 
+      email, create_date, modify_date, 
+      comments)
+    values (#{id,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
+      #{code,jdbcType=VARCHAR}, #{sex,jdbcType=INTEGER}, #{birth,jdbcType=DATE}, #{address,jdbcType=INTEGER}, 
+      #{birthPlace,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{email,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, #{modifyDate,jdbcType=TIMESTAMP}, 
+      #{comments,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xc.xnode.user.domain.User" >
+    insert into user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="code != null" >
+        code,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="birth != null" >
+        birth,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="birthPlace != null" >
+        birth_place,
+      </if>
+      <if test="username != null" >
+        username,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="createDate != null" >
+        create_date,
+      </if>
+      <if test="modifyDate != null" >
+        modify_date,
+      </if>
+      <if test="comments != null" >
+        comments,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null" >
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="birth != null" >
+        #{birth,jdbcType=DATE},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=INTEGER},
+      </if>
+      <if test="birthPlace != null" >
+        #{birthPlace,jdbcType=INTEGER},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyDate != null" >
+        #{modifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="comments != null" >
+        #{comments,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xc.xnode.user.domain.User" >
+    update user
+    <set >
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null" >
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="birth != null" >
+        birth = #{birth,jdbcType=DATE},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=INTEGER},
+      </if>
+      <if test="birthPlace != null" >
+        birth_place = #{birthPlace,jdbcType=INTEGER},
+      </if>
+      <if test="username != null" >
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyDate != null" >
+        modify_date = #{modifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="comments != null" >
+        comments = #{comments,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xc.xnode.user.domain.User" >
+    update user
+    set status = #{status,jdbcType=INTEGER},
+      name = #{name,jdbcType=VARCHAR},
+      code = #{code,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=INTEGER},
+      birth = #{birth,jdbcType=DATE},
+      address = #{address,jdbcType=INTEGER},
+      birth_place = #{birthPlace,jdbcType=INTEGER},
+      username = #{username,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      modify_date = #{modifyDate,jdbcType=TIMESTAMP},
+      comments = #{comments,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+	<select id="selectUserByUserName" resultMap="BaseResultMap" parameterType="java.lang.String" >
+		select * from user where username = #{username,jdbcType=VARCHAR}
+	</select>
+	<resultMap id="UserInfoResultMap" type="com.xc.xnode.user.domain.UserInfo" >
+	<id column="id" property="id" jdbcType="INTEGER" />
+	<result column="status" property="status" jdbcType="INTEGER" />
+	<result column="name" property="name" jdbcType="VARCHAR" />
+	<result column="code" property="code" jdbcType="VARCHAR" />
+	<result column="sex" property="sex" jdbcType="INTEGER" />
+	<result column="birth" property="birth" jdbcType="DATE" />
+	<result column="address" property="address" jdbcType="INTEGER" />
+	<result column="birth_place" property="birthPlace" jdbcType="INTEGER" />
+	<result column="username" property="username" jdbcType="VARCHAR" />
+	<result column="password" property="password" jdbcType="VARCHAR" />
+	<result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+	<result column="modify_date" property="modifyDate" jdbcType="TIMESTAMP" />
+	<result column="comments" property="comments" jdbcType="VARCHAR" />
+	<result column="bir_province_code" property="birProvinceCode" jdbcType="VARCHAR" />
+		<result column="bir_province_value" property="birProvinceValue" jdbcType="VARCHAR"/>
+		<result column="bir_city_code" property="birCityCode" jdbcType="VARCHAR" />
+		<result column="bir_city_value" property="birCityCodeValue" jdbcType="VARCHAR"/>
+		<result column="bir_town_code" property="birTownCode" jdbcType="VARCHAR" />
+		<result column="bir_town_value" property="birTownCodeValue" jdbcType="VARCHAR"/>
+		<result column="province" property="province" jdbcType="VARCHAR" />
+		<result column="province_value" property="provinceValue" jdbcType="VARCHAR"/>
+		<result column="city" property="city" jdbcType="VARCHAR" />
+		<result column="city_value" property="cityValue" jdbcType="VARCHAR"/>
+		<result column="town" property="town" jdbcType="VARCHAR" />
+		<result column="town_value" property="townValue" jdbcType="VARCHAR"/>
+	</resultMap>
+	<select id="selectUserInfoByUserName" resultMap="UserInfoResultMap" parameterType="java.lang.String">
+		select u.*,bir_province.code as bir_province_code,bir_province.value as bir_province_value,
+		bir_city.code as bir_city_code,bir_city.value as bir_city_value,bir_town.code as bir_town_code,
+		bir_town.value as bir_town_value,province.code as province,province.value as province_value,
+		city.code as city,city.value as city_value,town.code as town,town.value as town_value
+		from user u 
+			LEFT JOIN address bir on u.birth_place = bir.id
+					LEFT JOIN code_dict bir_province on bir.province_id = bir_province.id
+						LEFT JOIN code_dict bir_city on bir.city_id = bir_city.id
+								LEFT JOIN code_dict bir_town on bir.town_id = bir_town.id
+			LEFT JOIN address now on u.address = now.id
+					LEFT JOIN code_dict province on now.province_id = province.id
+						LEFT JOIN code_dict city on now.city_id = city.id
+								LEFT JOIN code_dict town on now.town_id = town.id
+		where username = #{username,jdbcType=VARCHAR}
+	</select>
+	
+	<resultMap id="UserAddressResultMap" type="com.xc.xnode.user.domain.UserEnty" >
+	<id column="id" property="id" jdbcType="INTEGER" />
+	<result column="status" property="status" jdbcType="INTEGER" />
+	<result column="name" property="name" jdbcType="VARCHAR" />
+	<result column="code" property="code" jdbcType="VARCHAR" />
+	<result column="sex" property="sex" jdbcType="INTEGER" />
+	<result column="birth" property="birth" jdbcType="DATE" />
+	<result column="username" property="username" jdbcType="VARCHAR" />
+	<result column="password" property="password" jdbcType="VARCHAR" />
+	<result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+	<result column="modify_date" property="modifyDate" jdbcType="TIMESTAMP" />
+	<result column="comments" property="comments" jdbcType="VARCHAR" />
+	<result column="address" property="address" jdbcType="INTEGER" />
+	<result column="birth_place" property="birthPlace" jdbcType="INTEGER" />
+	<association property="nowaddress" column="address" javaType="Address">
+	 	<id column="now_id" property="id" jdbcType="INTEGER" />
+	    <result column="type" property="type" jdbcType="INTEGER" />
+	    <result column="country_id" property="countryId" jdbcType="INTEGER" />
+	    <result column="province_id" property="provinceId" jdbcType="INTEGER" />
+	    <result column="city_id" property="cityId" jdbcType="INTEGER" />
+	    <result column="town_id" property="townId" jdbcType="INTEGER" />
+	    <result column="addr" property="addr" jdbcType="VARCHAR" />
+	 </association>
+	<association property="birthaddress" column="birth_place" javaType="Address">
+	 	<id column="bir_id" property="id" jdbcType="INTEGER" />
+	    <result column="bir_type" property="type" jdbcType="INTEGER" />
+	    <result column="bir_country_id" property="countryId" jdbcType="INTEGER" />
+	    <result column="bir_province_id" property="provinceId" jdbcType="INTEGER" />
+	    <result column="bir_city_id" property="cityId" jdbcType="INTEGER" />
+	    <result column="bir_town_id" property="townId" jdbcType="INTEGER" />
+	    <result column="bir_addr" property="addr" jdbcType="VARCHAR" />
+	</association>
+	</resultMap>
+	<select id="getUserAddress" resultMap="UserAddressResultMap" parameterType="java.lang.String">
+			select u.*,now.id as now_id,now.type,now.country_id,now.province_id,now.city_id,now.town_id,now.addr,
+				bir.id as bir_id,bir.type as bir_type,bir.country_id as bir_country_id, 
+				bir.province_id as bir_province_id,bir.city_id as bir_city_id,bir.town_id as bir_town_id,
+				bir.addr as bir_addr
+		  		from user u
+		  			left join address now on u.address = now.id
+		  				left join address bir on u.birth_place = bir.id
+		  					where username = #{username,jdbcType=VARCHAR}
+	</select>
+	
+	<resultMap id="UserShowResultMap" type="com.xc.xnode.user.domain.UserShow" >
+	<id column="id" property="id" jdbcType="INTEGER" />
+	<result column="status" property="status" jdbcType="INTEGER" />
+	<result column="name" property="name" jdbcType="VARCHAR" />
+	<result column="code" property="code" jdbcType="VARCHAR" />
+	<result column="sex" property="sex" jdbcType="INTEGER" />
+	<result column="username" property="username" jdbcType="VARCHAR" />
+	<result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+	<result column="modify_date" property="modifyDate" jdbcType="TIMESTAMP" />
+    <result column="node_num" property="nodeNum" jdbcType="INTEGER" />
+    <result column="wishNum" property="wishNum" jdbcType="INTEGER" />
+	</resultMap>
+	<select id="selectUserListByparams" resultMap="UserShowResultMap" parameterType="java.util.Map">
+		select u.id,u.name,u.username,u.status,u.sex,u.code,u.create_date,u.modify_date,n.node_num,w.wishNum
+			from user u 
+				LEFT JOIN (select count(*) as node_num,user_id from node group by user_id) n on u.id = n.user_id
+				LEFT JOIN (select count(*) as wishNum,user_id from wish_pool group by user_id) w on w.user_id = u.id
+				where 1=1
+				<if test = "username != null">
+					and u.username like concat('%',#{username,jdbcType=VARCHAR},'%')
+				</if>
+				<if test = "id != null">
+					and u.id = #{id,jdbcType=INTEGER}
+				</if>
+				<if test="startDate != null">
+					and create_date &gt; = #{startDate,jdbcType=TIMESTAMP}
+				</if>
+				<if test="endDate != null">
+					and create_date &lt; = #{endDate,jdbcType=TIMESTAMP}
+				</if>
+				<if test ="status != null">
+					and status = #{status,jdbcType=INTEGER}
+				</if>
+	</select>
+</mapper>

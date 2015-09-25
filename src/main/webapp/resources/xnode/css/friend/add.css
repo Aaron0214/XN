@@ -1,0 +1,16 @@
+.bar>*{
+	margin-top:1px;
+}
+.bar {
+	height: 25px;
+}
+
+.bar label{
+	vertical-align: middle;
+}
+
+.button {
+	margin-left:10px;
+	height: 22px;
+	border-radius: 5px;
+}

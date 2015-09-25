@@ -1,0 +1,124 @@
+.path{
+	position: fixed;
+	width: 100%;
+	z-index: 10;
+}
+#viewForm{
+	position: relative;
+	top: 41px;
+}
+#inputTable{
+	position: fixed;
+	width: 100%;
+	top: 41px;
+	z-index: 10;
+	background: #FFF;
+}
+#errorTable{
+	position: relative;
+	top: 247px;
+}
+table.list{
+	table-layout:fixed;
+}
+table.list tr th,table.list tr:hover th{
+	text-align:center;
+}
+table.list tr td{
+	text-align:center;
+	word-wrap:break-word;
+}
+.add-list{
+	text-align:left;
+	margin-left:55px;
+	width:80%;
+	float:left;
+}
+.add-to-table em{
+	margin-right:10px;
+}
+.form-group{
+	padding:0;
+	display: inline-block;
+}
+.main-dialog .form-group{
+	padding:5px;
+}
+.form-group label{
+	font-weight:bold;
+	font-size:12px;
+}
+.form-group div span{
+	width:400px;
+}
+.hidden{
+	display:none;
+}
+.right{
+	background: url(../../images/department/right.png) no-repeat;
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	position: relative;
+	top: 5px;
+	cursor:pointer;
+}
+.right.down{
+	background: url(../../images/department/down.png) no-repeat;
+	top: 10px;
+	left: -5px;
+}
+/*dialog*/
+div.xxDialog{
+	margin-left: -350px;
+	top: 12%;
+}
+div.xxDialog .dialogContent{
+	max-height:462px;
+}
+.main-dialog{
+	margin: 0 auto;
+	padding: 20px;
+}
+.form-select{
+	margin-left: -50px;
+	display: inline-block;
+	margin-left: 20px;
+}
+.form-input{
+	margin-left: 20px;
+}
+.form-span{
+	margin-left: 20px;
+	color: yellowgreen;
+}
+.loading-icon{
+	margin-left: 40%;
+	margin-top: 7%;
+}
+.searchBox {
+	padding: 5px 16px;
+	background-color: #FFF;
+	border-bottom: 1px solid #DDD;
+	font-weight: bold;
+}
+.button{
+	margin-left: 20px;
+}
+
+#logFileName {
+	width: 800px;;
+}
+
+#logFileName label {
+	width: 185px;
+	margin-left: 14px;
+	display: inline-block;
+}
+
+#logFileName input {
+	vertical-align: text-bottom;
+}
+.error {
+	margin-bottom: 80px;
+}

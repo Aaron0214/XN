@@ -1,0 +1,202 @@
+.template-one {
+	position: absolute;
+	background: url(../../images/wishpool/background1.png) no-repeat;
+	width: 215px;
+	height: 230px;
+	cursor: pointer;
+}
+
+.wish-back{
+	left: 15px;
+	-o-transform: rotate(-34deg); /* Opera */
+	-webkit-transform: rotate(-34deg); /* chrome */
+	-moz-transform: rotate(-34deg); /* firefox */
+	/*  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1); */
+	/* filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand',M11=0.84857027478461, M12=0.52908268612002, M21=-0.52908268612002, M22=0.84857027478461); *//* ie */
+}
+
+.wish-text {
+	position: absolute;
+	left:84px;
+	top:130px;
+	/* margin: 130px 90px 90px 84px; */
+	width: 73px;
+	cursor: pointer;
+	/* filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand',M11=0.86602540378444, M12=0.5, M21=-0.5, M22=0.86602540378444); */
+}
+
+.template-back {
+	left: 15px;
+	top: 84px;
+}
+
+.wish-user {
+	position: absolute;
+	/* left:127px; */
+	right: 66px;
+	top:165px;
+	/* margin: 178px 90px 90px 115px; */
+	cursor: pointer;
+	/* filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand',M11=0.86602540378444, M12=0.5, M21=-0.5, M22=0.86602540378444); */
+}
+
+.wish-back1 {
+	left: 211px;
+	-o-transform: rotate(34deg); /* Opera */
+	-webkit-transform: rotate(34deg); /* chrome */
+	-moz-transform: rotate(34deg); /* firefox */
+	/*  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1); */
+	/* filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand',M11=0.84857027478461, M12=0.52908268612002, M21=-0.52908268612002, M22=0.84857027478461); *//* ie */
+}
+
+.mskeLayBg {
+	background: #000;
+	width: 100%;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 10;
+	opacity: 0.7;
+	filter: alpha(opacity = 70);
+	display: none;
+	_display: none !important
+}
+
+.mskelayBox {
+	height: 488px;
+	width: 508px;
+	/* margin-top: -251px;
+	margin-left: -494px; */
+	position: fixed;
+	left: 25%;
+	top: 7%;
+	/* top:16%; */
+	/* border: 7px solid #FFF; */
+	z-index: 20;
+	/* background: #FFF; */
+	display: none;
+	_display: none !important
+}
+
+.mskeClaose {
+	position: absolute;
+	top: -17px;
+	right: -17px;
+	cursor: pointer;
+	background: url(../../images/wishpool/mke_close.png) no-repeat;
+	width:27px;
+	height:27px; 
+}
+
+.bigImageBox{
+	background: url(../../images/wishpool/bigimage.png) no-repeat;
+	width:508px;
+	height:488px;
+	cursor: pointer;
+}
+
+.big-text {
+	position: absolute;
+	left: 200px;
+    top: 250px;
+	width: 195px;
+	cursor: pointer;
+	font-size: 27px;
+}
+
+.big-user {
+	position: absolute;
+  	right: 155px;
+ 	bottom: 115px;
+ 	cursor: pointer;
+ 	font-size: 27px;
+}
+
+.add-test{
+	border: none;
+ 	background: none;
+  	height: 110px;
+}
+
+.button {
+    height: 30px;
+    padding: 0 25px;
+}
+.bar>* {
+	margin-top:0px;
+}
+
+.bar input{
+	margin-right:10px;
+} 
+
+.flow {
+	z-index: 2;
+  	position: absolute;
+ 	width: 98%;
+}
+
+.rolate {
+	background: url(../../images/wishpool/rolate1.png) no-repeat;
+	width:227px;
+	height:233px;
+}
+
+.hidden {
+  display: none;
+}
+
+.rolate-slip{
+	width: 8px;
+    height: 360px;
+    right: -123px;
+    top: 70px;
+  	position: absolute;
+  	background: darkgray;
+  	margin-top:10px;
+}
+.rolate-shade{
+	width: 8px;
+	height:180px;
+    right: -123px;
+    top: 70px;
+  	position: absolute;
+  	background: aqua;
+  	margin-top: 10px;
+}
+.rolate-button{
+	right: -129px;
+  	top: 249px;
+	position: absolute;
+  	border-radius: 27px;
+  	width: 20px;
+  	height: 20px;
+  	background: goldenrod;
+  	cursor: pointer;
+}
+
+.shade_info{
+	margin-left: 15px;
+  	color: white;
+  	position: absolute;
+}
+
+.info_t {
+	top: -8px;
+	position: absolute;
+}
+
+.info_b{
+ 	top: 350px;
+ 	position: absolute;
+}
+
+.info_c{
+ 	top: 172px;
+ 	position: absolute;
+}
+
+.dialog-overlay{
+	background: #000;
+  	opacity: 0.6;
+}

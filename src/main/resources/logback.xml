@@ -1,0 +1,32 @@
+<configuration>
+	<contextName>standard-code</contextName>
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{MMdd.HHmmss} [%-22t] %-5p L:%-3L %-22c{0} - %m%n</pattern>
+		</encoder>
+	</appender>
+	<appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>../logs/listen.log</File>
+		<encoder>
+			<pattern>%d{MMdd.HHmmss} [%-22t] %-5p L:%-3L %-22c{0} - %m%n</pattern>
+		</encoder>
+
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>../logs/listen.%d{yyyyMMddHH}.log</fileNamePattern>
+		</rollingPolicy>
+		<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<MaxFileSize>100MB</MaxFileSize>
+		</triggeringPolicy>
+	</appender>
+	<root level="debug">
+		<appender-ref ref="console" />
+	</root>
+	<logger name="com.ibatis.common.jdbc.ScriptRunner" level="debug" additivity="false">
+              <appender-ref ref="console" />
+       </logger>
+       
+	<logger name="com.ibatis.sqlmap.engine.impl.SqlMapClientDelegate" level="debug" additivity="false">
+              <appender-ref ref="console" />
+       </logger>
+	
+</configuration>

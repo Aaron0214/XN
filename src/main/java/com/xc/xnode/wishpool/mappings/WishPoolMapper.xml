@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xc.xnode.wishpool.dao.WishPoolMapper" >
+  <resultMap id="BaseResultMap" type="com.xc.xnode.wishpool.domain.WishPool" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="css" property="css" jdbcType="VARCHAR" />
+    <result column="wish_text" property="wishText" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="template" property="template" jdbcType="INTEGER" />
+    <result column="wish_num" property="wishNum" jdbcType="BIGINT" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="modify_date" property="modifyDate" jdbcType="TIMESTAMP" />
+    <result column="comments" property="comments" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, css, wish_text, user_id, template, wish_num, create_date, modify_date, comments
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from wish_pool
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from wish_pool
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xc.xnode.wishpool.domain.WishPool" >
+    insert into wish_pool (id, css, wish_text, 
+      user_id, template, wish_num, 
+      create_date, modify_date, comments
+      )
+    values (#{id,jdbcType=INTEGER}, #{css,jdbcType=VARCHAR}, #{wishText,jdbcType=VARCHAR}, 
+      #{userId,jdbcType=INTEGER}, #{template,jdbcType=INTEGER}, #{wishNum,jdbcType=BIGINT}, 
+      #{createDate,jdbcType=TIMESTAMP}, #{modifyDate,jdbcType=TIMESTAMP}, #{comments,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xc.xnode.wishpool.domain.WishPool" >
+    insert into wish_pool
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="css != null" >
+        css,
+      </if>
+      <if test="wishText != null" >
+        wish_text,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="template != null" >
+        template,
+      </if>
+      <if test="wishNum != null" >
+        wish_num,
+      </if>
+      <if test="createDate != null" >
+        create_date,
+      </if>
+      <if test="modifyDate != null" >
+        modify_date,
+      </if>
+      <if test="comments != null" >
+        comments,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="css != null" >
+        #{css,jdbcType=VARCHAR},
+      </if>
+      <if test="wishText != null" >
+        #{wishText,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="template != null" >
+        #{template,jdbcType=INTEGER},
+      </if>
+      <if test="wishNum != null" >
+        #{wishNum,jdbcType=BIGINT},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyDate != null" >
+        #{modifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="comments != null" >
+        #{comments,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xc.xnode.wishpool.domain.WishPool" >
+    update wish_pool
+    <set >
+      <if test="css != null" >
+        css = #{css,jdbcType=VARCHAR},
+      </if>
+      <if test="wishText != null" >
+        wish_text = #{wishText,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="template != null" >
+        template = #{template,jdbcType=INTEGER},
+      </if>
+      <if test="wishNum != null" >
+        wish_num = #{wishNum,jdbcType=BIGINT},
+      </if>
+      <if test="createDate != null" >
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyDate != null" >
+        modify_date = #{modifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="comments != null" >
+        comments = #{comments,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xc.xnode.wishpool.domain.WishPool" >
+    update wish_pool
+    set css = #{css,jdbcType=VARCHAR},
+      wish_text = #{wishText,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=INTEGER},
+      template = #{template,jdbcType=INTEGER},
+      wish_num = #{wishNum,jdbcType=BIGINT},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      modify_date = #{modifyDate,jdbcType=TIMESTAMP},
+      comments = #{comments,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+  <resultMap id="UserWishMap" type="com.xc.xnode.wishpool.domain.WishPoolUser" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="css" property="css" jdbcType="VARCHAR" />
+    <result column="wish_text" property="wishText" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="template" property="template" jdbcType="INTEGER" />
+    <result column="wish_num" property="wishNum" jdbcType="BIGINT" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="modify_date" property="modifyDate" jdbcType="TIMESTAMP" />
+    <result column="comments" property="comments" jdbcType="VARCHAR" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+  </resultMap>
+  
+  <select id="getWishListByUser" resultMap="UserWishMap" parameterType="java.lang.String">
+  		select wp.*,u.username as username from wish_pool wp
+  			left join user u on u.id = wp.user_id
+  		<if test="username != null">
+  			where u.username = #{username,jdbcType=VARCHAR}
+  		</if>
+  		order by create_date asc
+  </select>
+  
+  <select id="getWishListByParams" resultMap="UserWishMap" parameterType="com.xc.xnode.wishpool.domain.SearchParams">
+  		select wp.*,u.username as username from wish_pool wp
+  			left join user u on u.id = wp.user_id where 1=1
+  		<if test="username != null">
+  			and u.username = #{username,jdbcType=VARCHAR}
+  		</if>
+  		<if test="id != null">
+  			and wp.id = #{id,jdbcType=INTEGER}
+  		</if>
+  		<if test="wishtext != null">
+  			and wp.wish_text like concat('%',#{wishtext,jdbcType=VARCHAR},'%')
+  		</if>
+  		<if test="startDate != null">
+  			and wp.create_date &gt;= #{startDate,jdbcType=TIMESTAMP}
+  		</if>
+  		<if test="endDate != null">
+  			and wp.create_date &lt;= #{endDate,jdbcType=TIMESTAMP}
+  		</if>
+  		<if test="username != null">
+  			and u.username = #{username,jdbcType=VARCHAR}
+  		</if>
+  </select>
+</mapper>

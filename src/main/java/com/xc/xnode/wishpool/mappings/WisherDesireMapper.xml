@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xc.xnode.wishpool.dao.WisherDesireMapper" >
+  <resultMap id="BaseResultMap" type="com.xc.xnode.wishpool.domain.WisherDesire" >
+    <result column="wisher_id" property="wisherId" jdbcType="INTEGER" />
+    <result column="wish_id" property="wishId" jdbcType="INTEGER" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <insert id="insert" parameterType="com.xc.xnode.wishpool.domain.WisherDesire" >
+    insert into wisher_desire (wisher_id, wish_id, create_date
+      )
+    values (#{wisherId,jdbcType=INTEGER}, #{wishId,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xc.xnode.wishpool.domain.WisherDesire" >
+    insert into wisher_desire
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="wisherId != null" >
+        wisher_id,
+      </if>
+      <if test="wishId != null" >
+        wish_id,
+      </if>
+      <if test="createDate != null" >
+        create_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="wisherId != null" >
+        #{wisherId,jdbcType=INTEGER},
+      </if>
+      <if test="wishId != null" >
+        #{wishId,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="selectByParams" resultMap="BaseResultMap" parameterType="java.util.Map">
+  	select * from wisher_desire where 1=1
+  		<if test="wisherId != null">
+  			and wisher_id = #{wisherId,jdbcType=INTEGER}
+  		</if>
+  		<if test="wishId != null">
+  			and wish_id =  #{wishId,jdbcType=INTEGER}
+  		</if>
+  		<if test="startDate != null">
+  			and create_date &gt;= #{startDate,jdbcType=TIMESTAMP} 
+  		</if>
+  		<if test="endDate != null">
+  			and create_date &lt;= #{endDate,jdbcType=TIMESTAMP}
+  		</if>
+  </select>
+</mapper>

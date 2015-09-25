@@ -1,0 +1,8 @@
+.input a:hover{
+	cursor:pointer;
+}
+
+.change-color{
+	color: blue;
+	text-decoration: underline;
+}

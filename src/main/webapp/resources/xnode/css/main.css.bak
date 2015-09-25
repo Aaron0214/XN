@@ -1,0 +1,313 @@
+@charset "utf-8";
+
+/*
+ * Copyright 2005-2013 hengtiansoft.com. All rights reserved.
+ * Support: http://www.hengtiansoft.com
+ * License: http://www.hengtiansoft.com/license
+ * 
+ * Style - Main
+ * Version 1.0_beta
+ */
+
+/* ---------- Main ---------- */
+*{
+	font: 12px Microsoft YaHei;
+}
+html, body {
+	min-width: 100%;
+	height: 100%;
+	overflow: hidden;
+	width:100%;	
+}
+
+
+table.head,table.main {
+	width: 100%;
+}
+table.head .headTr{
+	/* height:60px; */
+}
+table.main td {
+	vertical-align: top;
+	height: 100%;
+}
+
+table.head .logo {
+	width: 175px;
+	vertical-align: middle;
+}
+
+table.head .nav {
+	width: 800px;
+	height: 30px;
+	float: left;
+	padding-top: 30px;
+	white-space: nowrap;
+}
+
+table.head .nav li {
+	width: 70px;
+	float: left;
+	padding: 0px 2px;
+	background: url(../images/main.gif) right -60px no-repeat;
+}
+
+table.head .nav li a {
+	height: 30px;
+	line-height: 30px;
+	display: block;
+	padding: 0px 6px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #488bd1;
+	text-align: center;
+	outline: none;
+	blr: expression(this.hideFocus = true);
+}
+
+table.head .link {
+	width: 320px;
+	height: 29px;
+	line-height:29px;
+	text-align: right;
+	overflow: hidden;
+	white-space: nowrap;
+	margin-right:15px;
+}
+
+table.head .link a {
+	padding: 10px 6px;
+	/* color:#FFF; */
+	font-size:14px;
+	font-weight:bold;
+}
+	
+#dLabel{
+	position: relative;
+	top: -7px;     
+	right:22px;                              
+}
+table.main .menu {
+	/* background-color: #343838; */
+	width:140px;;
+}
+
+table.main .menu dl {
+	text-align:center;
+}
+
+
+table.main .menu .default {
+	display: block;
+}
+
+
+table.main .menu dd a {
+	height: 40px;
+	line-height: 40px;
+	display: block;
+	outline: none;
+	blr: expression(this.hideFocus = true);
+	text-align:center;
+}
+table.main iframe {
+	width: 100%;
+	height: 100%;
+}
+.headTr th{
+	 background: #BBBBB5;
+	/* background:#B6DD18; */
+}
+
+.headTr a{
+	/* color:#fff; */
+	color:#F4D8A7;
+}
+.headTr span{
+	/* color:#fff; */
+	color:#F4D8A7;
+	font-size: 14px;
+}
+
+td.menu a{
+	/* color:#fff; */
+	outline: none;
+}
+
+.loginName{
+	background:url(../images/sprite.png);
+	background-position:-144px 0px;
+	width:24px;
+	height:24px;
+	display:inline-block;
+	position: relative;
+	right:16px;
+}
+.panel-title a{
+	font-size:16px;
+	margin-left: 7px;
+	position:relative;
+	top:5px;
+}
+.panel-body dl dd.checked{
+	background-color:#dd4e40;
+}
+.panel-body dl dd{
+	height:40px;
+	/* background-color:#292e31; */
+	border-top:1px solid #1a1a1a;
+}
+.panel-body dl dd a{
+	font-size:14px;
+	/* color:#fff; */
+}
+.panel-body dl dd a:hover,.panel-body dl dd a:focus,.dropdown-menu,.dropdown-menu li a:hover{
+	background-color:#dd4e40;
+}
+.dropdown-menu{
+	background-color:#484A4C;
+	min-width:140px;
+	padding:0;
+	margin:6px -56px;
+	border-radius:0;
+}
+ul.dropdown-menu li a{
+	height:30px;
+	border-top:1px solid #1a1a1a;
+	text-align:center;
+	position:relative;
+}
+ul.dropdown-menu li a span{
+	font-size:14px;
+	position: relative;
+	top: -5px;
+}
+ul.dropdown-menu li a:hover,ul.dropdown-menu li a:focus{
+	color:#fff;
+	background-color:#292E31;
+}
+.panel-heading{
+	height:50px;
+}
+.machineNav{
+	background:url(../images/sprite.png);
+	background-position:0px 24px;
+	width:24px;
+	height:24px;
+	display:inline-block;
+	margin-right:12px;
+	position: relative;
+	top: 6px;
+}
+.sqlNav{
+	background:url(../images/sprite.png);
+	background-position:-48px 0px;
+	width:24px;
+	height:24px;
+	display:inline-block;
+	margin-right:12px;
+	position: relative;
+	top: 6px;
+}
+.memberNav{
+	background:url(../images/sprite.png);
+	background-position:-120px 0px;
+	width:24px;
+	height:24px;
+	display:inline-block;
+	margin-right:12px;
+	position: relative;
+	top: 6px;
+}
+.matterNav{
+	background:url(../images/sprite.png);
+	background-position:-168px 0px;
+	width:24px;
+	height:24px;
+	display:inline-block;
+	margin-right:12px;
+	position: relative;
+	top: 6px;
+}
+.marketingNav{
+	background:url(../images/sprite.png);
+	background-position:-72px 0px;
+	width:24px;
+	height:24px;
+	display:inline-block;
+	margin-right:12px;
+	position: relative;
+	top: 6px;
+}
+.suppliermarketingNav{
+	background:url(../images/sprite.png);
+	background-position:-574px 0px;
+	width:24px;
+	height:24px;
+	display:inline-block;
+	margin-right:12px;
+	position: relative;
+	top: 6px;
+}
+.webManageNav{
+	background:url(../images/sprite.png);
+	background-position:-192px 0px;
+	width:24px;
+	height:24px;
+	display:inline-block;
+	margin-right:12px;
+	position: relative;
+	top: 6px;
+}
+.systemNav{
+	background:url(../images/sprite.png);
+	background-position:0px 0px;
+	width:24px;
+	height:24px;
+	display:inline-block;
+	margin-right:12px;
+	position: relative;
+	top: 6px;
+}
+
+.otherNav{
+	background:url(../images/sprite.png);
+	background-position: 501px 0px;
+	width:24px;
+	height:24px;
+	display:inline-block;
+	margin-right:12px;
+	position: relative;
+	top: 6px;
+}
+
+.roleNav{
+	background:url(../images/sprite1.png);
+	background-position:-24px -42px;
+	width:24px;
+	height:24px;
+	display:inline-block;
+	margin-right:12px;
+	position: relative;
+	top: 6px;
+}
+.navIcon{
+	background:url(../images/sprite.png);
+	background-position:-554px 0px;
+	width:20px;
+	height:20px;
+	display:inline-block;
+	margin-left:8px;
+	position:relative;
+	top:5px;
+}
+.defaultExpand{
+	background-position: -418px 0px;
+}
+.dropdown{
+	position:absolute;
+	top:26px;
+	right:1px;
+	color:#FFF;
+}
+

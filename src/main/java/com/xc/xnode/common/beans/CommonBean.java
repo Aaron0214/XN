@@ -1,0 +1,1 @@
+/** *  */package com.xc.xnode.common.beans;import java.io.Serializable;/** * @author e592387 * */public class CommonBean implements Serializable{	/**	 * 	 */	private static final long serialVersionUID = 1L;	}

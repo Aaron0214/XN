@@ -1,0 +1,20 @@
+.information{
+	 color: blueviolet;
+  	 font-size: 12px;
+ 	 margin-left: 10px;
+}
+.input {
+	font-size:14px;
+}
+.text {
+	width: 128px;
+}
+.input th{
+	line-height: 30px;
+}
+.button {
+	height:30px;
+}
+.warn{
+	border-color: rgb(242, 34, 137);
+}

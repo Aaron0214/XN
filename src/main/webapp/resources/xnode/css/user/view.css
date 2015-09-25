@@ -1,0 +1,19 @@
+.edit_button{
+	background: url("../../images/user/edit1.jpg") no-repeat;
+  	width: 25px;
+  	height: 25px;
+  	position: absolute;
+  	top: 52px;
+  	left: 370px;
+  	border: none;
+  	cursor: pointer;
+}
+
+.input {
+	margin-top:5px;
+	font-size:16px;
+}
+
+.input td{
+	line-height: 30px;
+}

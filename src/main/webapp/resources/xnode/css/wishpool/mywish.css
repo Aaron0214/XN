@@ -1,0 +1,106 @@
+.tab_view {
+	position: absolute;
+	margin-top: -41px;
+	right: 5px;
+}
+
+.tab_view .active {
+	border: inset;
+	padding: 8px 7px;
+	background: lavender;
+}
+
+.tab_view a {
+	padding: 10px 7px;
+	float: right;
+	width: 20px;
+	margin-top: 2px;
+	margin-right: -1px;
+	border: 1px solid #ccc;
+	cursor: pointer;
+	background: white;
+	border-radius: 2px;
+}
+
+.list th {
+	text-align: center;
+}
+
+.list {
+	text-align: center;
+}
+
+img {
+	width: 20px;
+}
+
+#viewForm th {
+	line-height: 30px;
+	font-size: 15px;
+	padding: 4px 10px 5px 0px;
+}
+
+#viewForm td {
+	line-height: 30px;
+	font-size: 14px;
+}
+
+#editForm select {
+	width: 138px;
+}
+
+#editForm .button {
+	padding: 0 15px;
+}
+
+#editForm textarea {
+	height: 45px;
+	resize: none;
+}
+
+#editForm .text {
+	width: 127px;
+}
+
+#editForm .msKeimgBox,#viewForm .msKeimgBox{
+	right: 380px;
+	position: absolute;
+	top: 60px;
+}
+
+#editForm .show {
+	margin-left: -70px;
+	font-size: 15px;
+}
+
+.list_main .button {
+	height: 22px;
+	padding: 0 15px;
+}
+
+.list_main .bar>* {
+	margin-top: 4px;
+}
+
+.list_main label {
+	vertical-align: middle;
+	display: inline-block;
+}
+
+.heart_img{
+	position: absolute;
+  	left: 90px;
+  	top: 188px;
+}
+
+.template-one img{
+	width:15px;
+}
+
+.big_heart_img{
+	position: absolute;
+ 	right: 217px;
+  	bottom: 61px;
+  	cursor: pointer;
+  	font-size: 27px;
+}
